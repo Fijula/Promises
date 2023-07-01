@@ -7,7 +7,11 @@
 */
 
 function isPalindrome(str) {
-  return true;
+  const normalizedStr = str.toLowerCase().replace(/[^a-z0-9]/g, ""); // Normalize the input string by converting to lowercase and removing non-alphanumeric characters
+  const reversedStr = normalizedStr.split("").reverse().join(""); // Reverse the normalized string
+  
+  return normalizedStr === reversedStr; // Compare the original and reversed strings for palindrome check
 }
 
 module.exports = isPalindrome;
+
